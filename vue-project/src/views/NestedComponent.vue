@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageTitle />
+        <PageTitle title="데이터 전달" />
     </div>
 </template>
 

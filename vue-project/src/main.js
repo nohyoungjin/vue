@@ -8,5 +8,5 @@ import mixins from './mixins'
 
 const app = createApp(App)
 app.use(router)
-app.mixin(mixins);
+app.mixin(mixins)
 app.mount('#app')

@@ -1,5 +1,5 @@
 <template>
-    <h1>Hello, {{title}}</h1> <br>
+    <br>
 
     <div :key="i" v-for="(product,i) in productList" style="font-size:40px;">
         <span>{{product.name}}</span> /

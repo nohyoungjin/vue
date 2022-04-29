@@ -2,10 +2,10 @@
     
     <div class="header">
         <nav>
-            <router-link to="/">홈</router-link> <span>|</span>
-            <router-link to="/about">소개</router-link> <span>|</span>
-            <router-link to="/DataBinding">자동차</router-link> <span>|</span>
-            <router-link to="/NestedComponent">데이터</router-link>
+            <router-link to="/">사업소개</router-link> <span>|</span>
+            <router-link to="/about">재단소개</router-link> <span>|</span>
+            <router-link to="/DataBinding">뉴스룸</router-link> <span>|</span>
+            <router-link to="/NestedComponent">채용</router-link>
         </nav>
     </div>
     

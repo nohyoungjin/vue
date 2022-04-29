@@ -18,14 +18,20 @@
 
 <script>
 
-import PageHead from './components/PageHead'; // 컴포넌트 import
+// 컴포넌트 import
+
+import PageHead from './components/PageHead'; 
 import PageFoot from './components/PageFoot'; 
 
-export default {
+// 현재 컴포넌트에서 사용할 컴포넌트 등록
+
+export default { 
+
     components: { 
       PageHead,
       PageFoot
-    } // 현재 컴포넌트에서 사용할 컴포넌트 등록
+    },
+    created() { }
 
 }
 

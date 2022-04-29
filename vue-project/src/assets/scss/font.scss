@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+/* Noto Sans */
+
+$family:unquote("Noto+Sans+KR:wght@100;300;400;500;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=#{$family}');

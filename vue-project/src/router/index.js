@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DataBinding from '../views/DataBinding.vue'
 import NestedComponent from '../views/NestedComponent.vue'
+import bodView from '../views/bodView.vue'
 
 const routes = [
   {
@@ -26,7 +27,13 @@ const routes = [
     path: '/NestedComponent',
     name: 'NestedComponent',
     component: NestedComponent
+  },
+  {
+    path: '/bodView',
+    name: 'bodView',
+    component: bodView
   }
+  
 ]
 
 const router = createRouter({

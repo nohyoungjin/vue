@@ -37,17 +37,37 @@
                 </li>
             </ul>
 
+            <paginate
+                :page-count="20"
+                :page-range="3"
+                :margin-pages="2"
+                :click-handler="clickCallback"
+                :prev-text="'Prev'"
+                :next-text="'Next'"
+                :container-class="'pagination'"
+                :page-class="'page-item'"
+            >
+            </paginate>
+
+
         </div>
     </div>
 </template>
 
 <style scoped>
 
+.pagination {justify-content: center;}
+
 </style>
 
 <script>
 
+import Paginate from 'vuejs-paginate-next';
+
 export default {
+    components: {
+      paginate: Paginate
+    },    
     data() {
         return {
             productList: []
@@ -58,7 +78,7 @@ export default {
     },
     methods: {
         async getList() {
-            this.productList = await this.$api('https://4feb8e42-6956-488b-b41f-6e8d520cd2d6.mock.pstmn.io/list', 'get');                                 
+            this.productList = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get');                                 
         }
     }
 }

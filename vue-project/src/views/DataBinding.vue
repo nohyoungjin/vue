@@ -14,7 +14,7 @@
             <!--  -->
 
             <ul class="bod-list">
-                <li :key="i" v-for="(product,i) in productList">
+                <li :key="i" v-for="(product,i) in getItems">
                     <!-- <a v-bind:href="'bodView?' + product.numx" class="bod-container"> -->
                     <router-link :to="{ path:'/bodView', query: { id: product.numx } }" class="bod-container">
                         <div class="box-cont">
@@ -38,10 +38,10 @@
             </ul>
 
             <paginate
-                :page-count="20"
+                :page-count="getPaginateCount"
                 :page-range="3"
                 :margin-pages="2"
-                :click-handler="clickCallback"
+                :click-handler="paginateClickCallback"
                 :prev-text="'Prev'"
                 :next-text="'Next'"
                 :container-class="'pagination'"
@@ -49,20 +49,19 @@
             >
             </paginate>
 
-
         </div>
     </div>
 </template>
 
 <style scoped>
 
-.pagination {justify-content: center;}
+.pagination {justify-content:center}
 
 </style>
 
 <script>
 
-import Paginate from 'vuejs-paginate-next';
+import Paginate from 'vuejs-paginate-next'
 
 export default {
     components: {
@@ -70,16 +69,32 @@ export default {
     },    
     data() {
         return {
-            productList: []
-        };
+            items: [],
+            currentPage: 1,
+            perPage: 1
+        }
     },
     created() {
-        this.getList();
+        this.getList()
     },
+    computed: {
+        getItems: function() {
+            let start = (this.currentPage - 1) * this.perPage
+            let end = this.currentPage * this.perPage
+            return this.items.slice(start, end)
+        },
+        getPaginateCount: function() {
+            return Math.ceil(this.items.length / this.perPage)
+        },
+    },    
     methods: {
         async getList() {
-            this.productList = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get');                                 
-        }
+            this.items = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get')                       
+        },
+
+        paginateClickCallback: function(pageNum) {
+            this.currentPage = Number(pageNum)
+        }   
     }
 }
 

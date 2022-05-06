@@ -9,7 +9,7 @@
 
             <div class="css-article">
                 <ul class="css-grid">
-                    <li>
+                    <li v-for="e in getItems" :key="e.id">
                         <a href="javascript:">
                             <div class="css-flex">
                                 <div class="css-thumb">
@@ -24,13 +24,13 @@
 
                                 <span class="cat">뉴스</span>
                                 <h4>
-                                    <span>포켓몬빵 줄이 길어질 때, OO은 웃고 있다? 포켓몬빵 줄이 길어질 때, OO은 웃고 있다? 포켓몬빵 줄이 길어질 때, OO은 웃고 있다?</span>
+                                    <span>포켓몬빵 줄이 길어질 때, OO은 웃고 있다? {{ e.id }}</span>
                                 </h4>
                                 <time>2022.03.19</time>
                             </div>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="javascript:">
                             <div class="css-flex">
                                 <div class="css-thumb">
@@ -92,8 +92,21 @@
                                 <time>2022.03.19</time>
                             </div>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
+
+                <paginate
+                    :page-count="getPaginateCount"
+                    :page-range="3"
+                    :margin-pages="2"
+                    :click-handler="paginateClickCallback"
+                    :prev-text="'Prev'"
+                    :next-text="'Next'"
+                    :container-class="'pagination'"
+                    :page-class="'page-item'"
+                >
+                </paginate>
+
             </div>
 
         </div>
@@ -101,10 +114,56 @@
 
 </template>
 
+<style scoped>
+
+.pagination {margin:70px 0 0;justify-content:center}
+
+</style>
+
 <script>
-import PageTitle from '../components/PageTitle'; // 컴포넌트 import
+
+// 컴포넌트 import
+
+import PageTitle from '../components/PageTitle' 
+import Paginate from 'vuejs-paginate-next'
+
+// 현재 컴포넌트에서 사용할 컴포넌트 등록
 
 export default {
-    components: {PageTitle} // 현재 컴포넌트에서 사용할 컴포넌트 등록
+    components: {
+        PageTitle,
+        paginate: Paginate
+    },
+    data: function() {
+        return {
+            items: [],
+            currentPage: 1,
+            perPage: 3,                    
+        }
+    },
+    created: function() {
+        for (let i = 1; i <= 10; i++) {
+            this.items.push({
+                id: i,
+                name: "name_" + i
+            })
+        }
+    },
+    computed: {
+        getItems: function () {
+            let start = (this.currentPage - 1) * this.perPage
+            let end = this.currentPage * this.perPage
+            return this.items.slice(start, end)
+        },
+        getPaginateCount: function () {
+            return Math.ceil(this.items.length / this.perPage)
+        }  
+    },
+    methods: {
+        paginateClickCallback: function (pageNum) {
+            this.currentPage = Number(pageNum)
+        }
+    },    
 }
+
 </script>

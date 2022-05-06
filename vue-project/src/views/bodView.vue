@@ -37,14 +37,14 @@ export default {
     data() {
         return {
             productList: []
-        };
+        }
     },
     created() {
-        this.getList();
+        this.getList()
     },
     methods: {
         async getList() {
-            this.productList = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get');                                 
+            this.productList = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get')                 
         }
     }
 }

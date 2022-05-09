@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import DataBinding from '../views/DataBinding.vue'
 import NestedComponent from '../views/NestedComponent.vue'
 import bodView from '../views/bodView.vue'
+import notiScroll from '../views/notiScroll.vue'
 
 const routes = [
   {
@@ -32,8 +33,12 @@ const routes = [
     path: '/bodView',
     name: 'bodView',
     component: bodView
+  },
+  {
+    path: '/notiScroll',
+    name: 'notiScroll',
+    component: notiScroll
   }
-  
 ]
 
 const router = createRouter({

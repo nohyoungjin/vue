@@ -3,7 +3,7 @@
 
 //////////////////////////////////////////////
 
-// 공통으로 적용되는 스타일 
+// 공통으로 적용되는 스타일
 
 /* Adopt bootstrap pagination stylesheet. */
 
@@ -35,19 +35,6 @@ nav a.router-link-exact-active {color:#42b983}
 /* NEW */
 
 :root {
-  --root-impact-green: #00a75d;
-  --root-impact-gray: #898989;
-  --lighter-green: #EFF8F5;
-  --darker-green: #008A4D;
-  --gradient-1-start: var(--root-impact-green);
-  --gradient-1-end: #00A72F;
-  --green-1: #539D84;
-  --green-2: #75A48F;
-  --green-3: #A9D7C7;
-  --green-4: #E4ECE7;
-  --green-5: #E6F6EF;
-  --green-6: #ECF9F4;
-  --green-7: #F2FAF8;
   --blue-1: #2979FF;
   --blue-2: #2264D1;
   --white: #fff;
@@ -144,11 +131,11 @@ a:hover .img-css {box-shadow:rgb(0 0 33 / 7%) 0px 16px 22.4px 4.8px, rgb(0 0 33 
 
 .bod-contxt {font-size:18px;font-weight:300;color:rgb(78, 89, 104);text-align:left;line-height:30px}
 
-.bod-contxt .box-grey, 
+.bod-contxt .box-grey,
 .bod-contxt .box-blue {width:100%;margin: 30px 0 50px;padding:40px;font-size:18px;font-weight:300;color:rgb(51, 61, 75);line-height:1.7;border-radius:16px}
 
 .bod-contxt .box-blue {background-color:rgb(249, 250, 251)}
-.bod-contxt .box-grey .title, 
+.bod-contxt .box-grey .title,
 .bod-contxt .box-blue .title {margin-bottom:20px;font-size:20px;font-weight:600;line-height:1.8}
 
 .bod-template > p {font-size:18px;font-weight:300;color:rgb(78, 89, 104);line-height:30px}
@@ -165,7 +152,7 @@ a:hover .img-css {box-shadow:rgb(0 0 33 / 7%) 0px 16px 22.4px 4.8px, rgb(0 0 33 
 
 .css-rad {width:100%;height:100%;border:1px solid rgba(2, 32, 71, 0.05);transform:translateZ(0);transition:0.2s ease-in-out;border-radius:16px}
 
-.css-im {overflow:hidden;position:relative;width:100%;height:100%;border-radius:16px;transform:translateZ(0);transition:0.2s ease-in-out} 
+.css-im {overflow:hidden;position:relative;width:100%;height:100%;border-radius:16px;transform:translateZ(0);transition:0.2s ease-in-out}
 a:hover .css-im {box-shadow:rgb(0 0 33 / 7%) 0px 16px 22.4px 4.8px, rgb(0 0 33 / 5%) 0px 3.2px 16px 0px, rgb(0 0 33 / 7%) 0px 0px 1px 0px;transform:translate3D(0, -3%, 0)}
 
 .css-im img {width:100%;height:100%;object-fit:cover}
@@ -185,7 +172,7 @@ a:hover .css-im {box-shadow:rgb(0 0 33 / 7%) 0px 16px 22.4px 4.8px, rgb(0 0 33 /
 
   /* 사업소개 뷰 */
 
-  #profile-image-container {position:relative;top:40px;margin:20px auto;margin-bottom:-100px}   
+  #profile-image-container {position:relative;top:40px;margin:20px auto;margin-bottom:-100px}
 
   .box-container {flex-direction:column;margin-top:70px;padding:0 0 150px}
   .box-container .box-left {flex:1;margin:0 0 50px}
@@ -202,7 +189,7 @@ a:hover .css-im {box-shadow:rgb(0 0 33 / 7%) 0px 16px 22.4px 4.8px, rgb(0 0 33 /
 
   /* 사업소개 리스트 */
 
-  .business-items {flex:0 0 100%;margin-bottom:21px}   
+  .business-items {flex:0 0 100%;margin-bottom:21px}
 
   /* 뉴스룸 */
 
@@ -238,3 +225,72 @@ a:hover .css-im {box-shadow:rgb(0 0 33 / 7%) 0px 16px 22.4px 4.8px, rgb(0 0 33 /
 
 
 /* // NEW */
+
+/* 36.5 */
+
+.stats_graph_box {position:relative;padding-top:30px;padding-bottom:20px}
+.graph {position:relative;height:13px;margin:0 auto;background:#f0f0f0;border-radius:4px;white-space:nowrap}
+
+.bar{
+  /* position:relative; */
+  display:inline-block;
+  height:13px;
+  background:#ddd;
+  border-radius:4px;
+  }
+
+.bar.green {
+  /* position:relative; */
+  z-index:1;
+  background: #e51937;
+}
+
+.bar.clear {
+  position:relative;
+  background:transparent;
+}
+
+.desc{
+  position:absolute;
+  top:-58px;
+  /* left: calc(50% - 56px); */
+  z-index:100;
+  margin:0;
+  text-align:center;
+  font-size:18px;
+  line-height:20px;
+  color:#333;
+  /* -webkit-transform:translate(-50%,-50%);
+  -ms-transform:translate(-50%,-50%);
+  -o-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%); */
+}
+
+.desc em {
+font-style:normal;
+font-size:18px;
+font-weight:700;
+}
+
+.desc {
+  left: 50%
+}
+
+.desc dt {margin:0 0 0 -56px}
+.desc dd em::after {margin:0 0 0 -10px}
+
+/* .bar.green .desc{left:calc(36.5% + 67.7px);transform:translate(0,-50%);} */
+
+
+.stats_graph_box .bar.green .desc em::after {
+  content: '';
+  width: 20px; /* 사이즈 */
+  height: 20px; /* 사이즈 */
+  border-top: 1px solid #121212; /* 선 두께 */
+  border-right: 1px solid #121212; /* 선 두께 */
+  display: inline-block;
+  transform: rotate(135deg); /* 각도 */
+  position: absolute;
+  top: 20px; /* 기본 0px 값으로 해주세요 */
+  left: 0; /* 기본 0px 값으로 해주세요 */
+}

@@ -33,7 +33,7 @@
 export default {
   data() {
     return {
-        defVa: 36.5,
+        defVa: 56.5,
         addVa: 13.5
         }
     },

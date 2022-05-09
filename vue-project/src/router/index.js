@@ -3,7 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import DataBinding from '../views/DataBinding.vue'
 import NestedComponent from '../views/NestedComponent.vue'
 import bodView from '../views/bodView.vue'
-import notiScroll from '../views/notiScroll.vue'
+import bodChart from '../views/bodChart.vue'
+import bodChart2 from '../views/bodChart2.vue'
 
 const routes = [
   {
@@ -35,9 +36,14 @@ const routes = [
     component: bodView
   },
   {
-    path: '/notiScroll',
-    name: 'notiScroll',
-    component: notiScroll
+    path: '/bodChart',
+    name: 'bodChart',
+    component: bodChart
+  },
+  {
+    path: '/bodChart2',
+    name: 'bodChart2',
+    component: bodChart2
   }
 ]
 

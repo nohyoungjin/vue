@@ -1,23 +1,22 @@
 <template>
 
     <div class="p-container">
-        <div class="p-container_inner">
+        <div class="p-container_inner"  style="width:800px;">
 
             <div class="stats_graph_box">
 
                 <div class="graph">
                     <!-- 비율에 따라 width 값 조정 -->
-                    <div class="bar green" v-bind:style="{ width: actVal() + '%' }">
-                        <dl class="desc">
-                            <dt>첫 온도 36.5℃</dt>
-                            <dd><em style="font-weight:normal;"></em></dd>
-                        </dl>
+                    <div class="bar red" v-bind:style="{ width: actVal() + '%' }">
+                        <div class="desc">
+                            <strong>첫 온도 36.5℃</strong>
+                            <em style="color:transparent">온도 표시</em>
+                        </div>
                     </div>
                     <div class="bar clear" v-bind:style="{ width: cleVal() + '%' }">
-                        <dl class="desc">
-                            <dt>&nbsp;</dt>
-                            <dd><em>{{ defVal() }}℃</em></dd>
-                        </dl>
+                        <div class="desc">
+                            {{ defVal() }}℃
+                        </div>
                     </div>
                 </div>
 
@@ -33,7 +32,7 @@
 export default {
   data() {
     return {
-        defVa: 56.5,
+        defVa: 40.8,
         addVa: 13.5
         }
     },
@@ -54,7 +53,6 @@ export default {
             this.cleVa = 100 - (this.defVa + this.addVa)
             return this.cleVa
         }
-
     }
 }
 

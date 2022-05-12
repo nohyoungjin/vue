@@ -21,7 +21,7 @@
                             </div>
                         </div>
 
-                        <p>향후 사회변화 <span style="background-color:rgb(246, 247, 178);">영상 콘텐츠 확산을 위해 영상 제작 교육 프로그램</span>도 준비할 예정입니다.</p>                                    
+                        <p>향후 사회변화 <span style="background-color:rgb(246, 247, 178);">영상 콘텐츠 확산을 위해 영상 제작 교육 프로그램</span>도 준비할 예정입니다.</p>
                     </div>
                 </article>
 
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+
+
 
 export default {
     data() {
@@ -44,7 +46,7 @@ export default {
     },
     methods: {
         async getList() {
-            this.productList = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get')                 
+            this.productList = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get')
         }
     }
 }

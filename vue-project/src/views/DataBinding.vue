@@ -1,7 +1,7 @@
 <template>
     <div class="p-container">
         <div class="p-container_inner">
-    
+
             <div role="tablist" class="tab-list">
                 <div class="on">전체</div>
                 <div>공지사항</div>
@@ -22,7 +22,7 @@
                             <h4>{{ product.coxt }}</h4>
                             <p>{{ product.feed }}</p>
                             <time>{{ product.time }}</time>
-                        </div>	
+                        </div>
                         <div class="box-img">
                             <div class="box-rel">
                                 <div class="box-abs">
@@ -66,7 +66,7 @@ import Paginate from 'vuejs-paginate-next'
 export default {
     components: {
       paginate: Paginate
-    },    
+    },
     data() {
         return {
             items: [],
@@ -86,15 +86,15 @@ export default {
         getPaginateCount: function() {
             return Math.ceil(this.items.length / this.perPage)
         },
-    },    
+    },
     methods: {
         async getList() {
-            this.items = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get')                       
+            this.items = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get')
         },
 
         paginateClickCallback: function(pageNum) {
             this.currentPage = Number(pageNum)
-        }   
+        }
     }
 }
 

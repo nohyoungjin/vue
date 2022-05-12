@@ -5,6 +5,7 @@ import NestedComponent from '../views/NestedComponent.vue'
 import bodView from '../views/bodView.vue'
 import bodChart from '../views/bodChart.vue'
 import bodChart2 from '../views/bodChart2.vue'
+import infiniteList from '../views/infiniteList.vue'
 
 const routes = [
   {
@@ -44,6 +45,12 @@ const routes = [
     path: '/bodChart2',
     name: 'bodChart2',
     component: bodChart2
+  }
+  ,
+  {
+    path: '/infiniteList',
+    name: 'infiniteList',
+    component: infiniteList
   }
 ]
 

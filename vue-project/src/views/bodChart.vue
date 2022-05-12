@@ -15,7 +15,7 @@
                     </div>
                     <div class="bar clear" v-bind:style="{ width: cleVal() + '%' }">
                         <div class="desc">
-                            {{ defVal() }}℃
+                            <strong>현재 온도 {{ defVal() }}℃</strong>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
 export default {
   data() {
     return {
-        defVa: 40.8,
+        defVa: 40.5,
         addVa: 13.5
         }
     },

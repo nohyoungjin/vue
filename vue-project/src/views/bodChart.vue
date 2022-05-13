@@ -1,7 +1,7 @@
 <template>
 
     <div class="p-container">
-        <div class="p-container_inner"  style="width:800px;">
+        <div class="p-container_inner" style="width:800px;">
 
             <div class="stats_graph_box">
 

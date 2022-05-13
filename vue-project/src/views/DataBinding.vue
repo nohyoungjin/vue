@@ -3,31 +3,26 @@
         <div class="p-container_inner">
 
             <div role="tablist" class="tab-list">
-                <div class="on">전체</div>
-                <div>공지사항</div>
-                <div>채용공고</div>
-                <div>사업보고</div>
-                <div>R&D리포트</div>
-                <div>보도자료</div>
+                <div :key="li.id" v-for="li in lista" @click="activate(li.id)" :class="{ on: active_el == li.id }" >{{ li.texto }}</div>
             </div>
 
             <!--  -->
 
             <ul class="bod-list">
-                <li :key="i" v-for="(product,i) in getItems">
-                    <!-- <a v-bind:href="'bodView?' + product.numx" class="bod-container"> -->
-                    <router-link :to="{ path:'/bodView', query: { id: product.numx } }" class="bod-container">
+                <li :key="i" v-for="(bod,i) in getItems">
+                    <!-- <a v-bind:href="'bodView?id=?' + product.numx" class="bod-container"> -->
+                    <router-link :to="{ path:'/bodView', query: { id: bod.numx } }" class="bod-container">
                         <div class="box-cont">
-                            <span>{{ product.cate }}</span>
-                            <h4>{{ product.coxt }}</h4>
-                            <p>{{ product.feed }}</p>
-                            <time>{{ product.time }}</time>
+                            <span>{{ bod.cate }}</span>
+                            <h4>{{ bod.coxt }}</h4>
+                            <p>{{ bod.feed }}</p>
+                            <time>{{ bod.time }}</time>
                         </div>
                         <div class="box-img">
                             <div class="box-rel">
                                 <div class="box-abs">
                                     <div class="img-css">
-                                        <img v-bind:src="'http://222.236.61.86:8111/SK_HappyAnd/images/page/innovator/' + product.imgs" aria-hidden="true" alt="">
+                                        <img v-bind:src="'http://222.236.61.86:8111/SK_HappyAnd/images/page/innovator/' + bod.imgs" aria-hidden="true" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -69,6 +64,16 @@ export default {
     },
     data() {
         return {
+            lista: [
+                {"id": "1", "texto": "전체"},
+                {"id": "2", "texto": "공지사항"},
+                {"id": "3", "texto": "채용공고"},
+                {"id": "4", "texto": "사업보고"},
+                {"id": "5", "texto": "R&D리포트"},
+                {"id": "6", "texto": "보도자료"}
+            ],
+            active_el: 0,
+            showMobileMenu: false,
             items: [],
             currentPage: 1,
             perPage: 1
@@ -88,9 +93,19 @@ export default {
         },
     },
     methods: {
+        //
+
+        activate:function(el){
+            this.active_el = el
+        },
+
+        // 데이터 겟
+
         async getList() {
             this.items = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get')
         },
+
+        //
 
         paginateClickCallback: function(pageNum) {
             this.currentPage = Number(pageNum)

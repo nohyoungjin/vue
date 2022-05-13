@@ -99,6 +99,14 @@ div.business-items a img {width:auto;height:auto}
 .tab-list > div.on,
 .tab-list > div:hover {color:var(--gray-1)}
 
+$bold: true;
+
+.tab-list > div:first-child {
+  @if $bold {
+    color:var(--gray-1)
+  }
+}
+
 .bod-list > li {width:100%;padding:0 0 70px}
 
 .bod-container {display:flex;flex-direction:row;justify-content:space-between;align-items:center}

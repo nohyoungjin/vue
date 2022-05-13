@@ -30,69 +30,6 @@
                             </div>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="javascript:">
-                            <div class="css-flex">
-                                <div class="css-thumb">
-                                    <div class="css-abs">
-                                        <div class="css-rad">
-                                            <div class="css-im">
-                                                <img src="http://222.236.61.86:8111/SK_HappyAnd/images/page/innovator/img_sksunny_logo.jpg">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <span class="cat">뉴스</span>
-                                <h4>
-                                    <span>새우깡=농심, 고래밥=오리온, 쿠크다스=?</span>
-                                </h4>
-                                <time>2022.03.19</time>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:">
-                            <div class="css-flex">
-                                <div class="css-thumb">
-                                    <div class="css-abs">
-                                        <div class="css-rad">
-                                            <div class="css-im">
-                                                <img src="http://222.236.61.86:8111/SK_HappyAnd/images/page/innovator/img_newvori_logo.jpg">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <span class="cat">뉴스</span>
-                                <h4>
-                                    <span>새우깡=농심, 고래밥=오리온, 쿠크다스=?</span>
-                                </h4>
-                                <time>2022.03.19</time>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:">
-                            <div class="css-flex">
-                                <div class="css-thumb">
-                                    <div class="css-abs">
-                                        <div class="css-rad">
-                                            <div class="css-im">
-                                                <img src="http://222.236.61.86:8111/SK_HappyAnd/images/page/innovator/img_newvori_logo.jpg">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <span class="cat">뉴스</span>
-                                <h4>
-                                    <span>새우깡=농심, 고래밥=오리온, 쿠크다스=?</span>
-                                </h4>
-                                <time>2022.03.19</time>
-                            </div>
-                        </a>
-                    </li> -->
                 </ul>
 
                 <paginate
@@ -124,7 +61,7 @@
 
 // 컴포넌트 import
 
-import PageTitle from '../components/PageTitle' 
+import PageTitle from '../components/PageTitle'
 import Paginate from 'vuejs-paginate-next'
 
 // 현재 컴포넌트에서 사용할 컴포넌트 등록
@@ -138,7 +75,7 @@ export default {
         return {
             items: [],
             currentPage: 1,
-            perPage: 3,                    
+            perPage: 3,
         }
     },
     created: function() {
@@ -157,13 +94,13 @@ export default {
         },
         getPaginateCount: function () {
             return Math.ceil(this.items.length / this.perPage)
-        }  
+        }
     },
     methods: {
         paginateClickCallback: function (pageNum) {
             this.currentPage = Number(pageNum)
         }
-    },    
+    },
 }
 
 </script>

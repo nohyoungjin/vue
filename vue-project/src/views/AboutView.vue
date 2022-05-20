@@ -37,13 +37,11 @@
 <script>
 
 export default {
-
     data() {
         return {
            siteUrl: "http://skhappiness.org/innovator/newvori.do"
         }
     }
-
 }
 
 </script>

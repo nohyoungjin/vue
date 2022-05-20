@@ -1,11 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {
+  createRouter,
+  createWebHistory
+} from 'vue-router'
+
 import HomeView from '../views/HomeView.vue'
-import DataBinding from '../views/DataBinding.vue'
-import NestedComponent from '../views/NestedComponent.vue'
-import bodView from '../views/bodView.vue'
-import bodChart from '../views/bodChart.vue'
-import bodChart2 from '../views/bodChart2.vue'
-import infiniteList from '../views/infiniteList.vue'
 
 const routes = [
   {
@@ -24,34 +22,39 @@ const routes = [
   {
     path: '/DataBinding',
     name: 'DataBinding',
-    component: DataBinding
+    component: () => import('../views/DataBinding.vue')
   },
   {
     path: '/NestedComponent',
     name: 'NestedComponent',
-    component: NestedComponent
+    component: () => import('../views/NestedComponent.vue')
   },
   {
     path: '/bodView',
     name: 'bodView',
-    component: bodView
+    component: () => import('../views/bodView.vue')
   },
   {
     path: '/bodChart',
     name: 'bodChart',
-    component: bodChart
+    component: () => import('../views/bodChart.vue')
   },
   {
     path: '/bodChart2',
     name: 'bodChart2',
-    component: bodChart2
-  }
-  ,
+    component: () => import('../views/bodChart2.vue')
+  },
   {
     path: '/infiniteList',
     name: 'infiniteList',
-    component: infiniteList
+    component: () => import('../views/infiniteList.vue')
+  },
+  {
+    path: '/tabList',
+    name: 'tabList',
+    component: () => import('../views/tabList.vue')
   }
+
 ]
 
 const router = createRouter({
@@ -60,4 +63,3 @@ const router = createRouter({
 })
 
 export default router
-

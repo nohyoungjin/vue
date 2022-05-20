@@ -3,7 +3,10 @@
         <div class="p-container_inner">
 
             <div role="tablist" class="tab-list">
-                <div :key="li.id" v-for="li in lista" @click="activate(li.id)" :class="{ on: active_el == li.id }" >{{ li.texto }}</div>
+                <!-- for 문의 인덱스를 사용 변수에 숫자를 입력 -->
+                <div v-for="(tab, index) in tabList" :key="index" :class="{ active: currentTab === index }">
+                    <a href="#" @click.prevent="currentTab = index">{{ tab }}</a>
+                </div>
             </div>
 
             <!--  -->
@@ -64,16 +67,15 @@ export default {
     },
     data() {
         return {
-            lista: [
-                {"id": "1", "texto": "전체"},
-                {"id": "2", "texto": "공지사항"},
-                {"id": "3", "texto": "채용공고"},
-                {"id": "4", "texto": "사업보고"},
-                {"id": "5", "texto": "R&D리포트"},
-                {"id": "6", "texto": "보도자료"}
+            currentTab: 0, // index 번호를 저장하는 변수
+            tabList: [
+                '전체',
+                '공지사항',
+                '채용공고',
+                '사업보고',
+                'R&D리포트',
+                '보도자료'
             ],
-            active_el: 0,
-            showMobileMenu: false,
             items: [],
             currentPage: 1,
             perPage: 1
@@ -94,19 +96,16 @@ export default {
     },
     methods: {
         //
-
         activate:function(el){
             this.active_el = el
         },
 
         // 데이터 겟
-
         async getList() {
             this.items = await this.$api('https://nohyoungjin.github.io/apitest/db.json', 'get')
         },
 
         //
-
         paginateClickCallback: function(pageNum) {
             this.currentPage = Number(pageNum)
         }

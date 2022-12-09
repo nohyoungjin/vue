@@ -5,3 +5,11 @@
     </div>
     
 </template>
+
+<script>
+
+export default {
+    name: 'PageFoot'
+}
+
+</script>

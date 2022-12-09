@@ -96,7 +96,7 @@ export default {
     },
     methods: {
         //
-        activate:function(el){
+        activate:function(el) {
             this.active_el = el
         },
 

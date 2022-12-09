@@ -14,12 +14,7 @@
 <script>
 
 export default {
-    props: {
-        title: {
-            type: String,
-            default: "페이지 제목 입니다."
-        }
-    }
+    name: 'PageHead'
 }
 
 </script>

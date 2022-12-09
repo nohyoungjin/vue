@@ -77,21 +77,23 @@ export default {
                         if (this.listItems.length - 1 === i) {
                             this.busy = true
                             break
+                        }
                     }
                 }
+
+                if (this.busy === true) {
+                    $state.complete()
+                }
+
+                this.list = this.list.concat(temp)
+                    $state.loaded()
+                }, 1000)
             }
-            if (this.busy === true) {
-                $state.complete()
-            }
-            this.list = this.list.concat(temp)
-                $state.loaded()
-            }, 1000)
-        }
-  },
-  mounted () {
-    this.getItem()
-    this.infiniteHandler()
-  }
+        },
+    mounted () {
+        this.getItem()
+        this.infiniteHandler()
+    }
 }
 
 </script>

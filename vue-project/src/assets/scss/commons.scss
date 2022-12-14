@@ -17,16 +17,7 @@
 
 //
 
-$color-main : #ff3322;
-
-$color-primary: #e96900;
-$url-images: "/assets/images/";
-$w: 200px;
-
-
-.header {display:flex;justify-content:center;align-items:center;position:fixed;left:0;top:0;z-index:100;width:100%;height:100px;margin:0 0 20px;border-bottom:1px solid #eee;background-color:#fff;font-size:24px;/* color:#fff */}
 .footer {display:flex;justify-content:center;align-items:center;position:fixed;left:0;bottom:0;width:100%;height:70px;border-top:1px solid #eee;background:#fff;font-size:24px}
-
 .container {width:100%;margin:0 auto;text-align:center}
 
 nav span {display:inline-block;position:relative;top:-4px;padding:0 20px 0 10px;font-size:10px}
@@ -52,11 +43,9 @@ nav a.router-link-exact-active {color:#42b983}
 
 /* 사업소개 리스트 */
 
-.business-container {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;margin:10px auto 114px}
-.business-items {position:relative;flex:0 1 30%;margin-bottom:26px;border:1px solid var(--gray-6);background-color:#fff;text-align:center;border-radius:2px}
+.business-items {border:1px solid var(--gray-6)}
 
 div.business-items::before {content:'';display:table;padding-top:72%}
-div.business-items a {display:flex;justify-content:center;align-items:center;position:absolute;top:0;left:0;width:100%;height:100%}
 div.business-items a img {width:auto;height:auto}
 
 .hover-elevation {transition:all 0.3s ease-in-out}
@@ -92,7 +81,7 @@ div.business-items a img {width:auto;height:auto}
 
 .p-container {width:100%;height:100%;margin:0 auto}
 /* .p-container_inner {width:92%;max-width:calc(100% - 48px);margin:0 auto} */
-.p-container_inner {width:100%;max-width:1140px;margin:150px auto}
+.p-container_inner {width:100%;max-width:1140px;margin:100px auto}
 
 .tab-list {display:flex;overflow-x:auto;margin-bottom:60px}
 .tab-list > div {margin-right:30px;font-size:30px;font-weight:700;line-height:1.4;cursor:pointer;word-break:keep-all}
@@ -171,7 +160,7 @@ a:hover .css-im {box-shadow:rgb(0 0 33 / 7%) 0px 16px 22.4px 4.8px, rgb(0 0 33 /
 
   /* 사업소개 리스트 */
 
-  .business-items {flex:0 0 calc(50% - 8px);margin-bottom:21px}
+  .business-items {flex:0 0 calc(50% - 8px) !important;margin-bottom:21px}
 
   /* 사업소개 뷰 */
 
@@ -192,7 +181,7 @@ a:hover .css-im {box-shadow:rgb(0 0 33 / 7%) 0px 16px 22.4px 4.8px, rgb(0 0 33 /
 
   /* 사업소개 리스트 */
 
-  .business-items {flex:0 0 100%;margin-bottom:21px}
+  .business-items {flex:0 0 100% !important;margin-bottom:21px}
 
   /* 뉴스룸 */
 

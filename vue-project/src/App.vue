@@ -31,7 +31,7 @@ export default {
       PageHead,
       PageFoot
     },
-    created() { }
+    created() {}
 
 }
 

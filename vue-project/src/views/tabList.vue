@@ -4,7 +4,7 @@
       <div class="p-container_inner">
 
         <div class="tab-list">
-            <div v-for="(item, index) in tabList" :key="index" :class="{active:currentTab === index}"> <!-- 조건식으로 해당 index에서 active 클래스 넣어주기 -->
+            <div v-for="(item, index) in tabList" :key="index" :class="{ active:currentTab === index }"> <!-- 조건식으로 해당 index에서 active 클래스 넣어주기 -->
                 <a href="#" @click.prevent="currentTab = index">{{ item }}</a> <!-- 클릭시 해당 index 값 currentTab에 넣어줌 -->
             </div>
         </div>

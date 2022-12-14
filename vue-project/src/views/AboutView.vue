@@ -11,7 +11,7 @@
 
             <div class="box-container">
                 <div class="box-left">
-                    <h1 class="heading-3">뉴보리</h1>
+                    <h1 class="heading-3 text-3xl font-bold">뉴보리</h1>
                     <a v-bind:href="siteUrl" id="external-link" class="round-button h48" target="_blank" >홈페이지</a>
                 </div>
 

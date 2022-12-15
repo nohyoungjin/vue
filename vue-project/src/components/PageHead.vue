@@ -38,7 +38,7 @@
                         <router-link to="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">목록</router-link>
                         <router-link to="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">페이지</router-link>
                         <router-link to="/tabList" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">탭</router-link>
-                        <router-link to="/DataBinding" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">게시판</router-link>
+                        <router-link to="/DataBinding" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">리스트/뷰</router-link>
                         <router-link to="/NestedComponent" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">페이징</router-link>
                         <router-link to="/infiniteList" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">무한 스크롤</router-link>
                     </div>

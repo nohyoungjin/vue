@@ -2,11 +2,11 @@
     <div class="p-container">
         <div class="p-container_inner">
 
-            <div role="tablist" class="tab-list">
+            <div role="tablist" class="flex overflow-x-auto overflow-y-hidden mb-[60px]">
                 <!-- for 문의 인덱스를 사용 변수에 숫자를 입력 -->
-                <div v-for="(tab, index) in tabList" :key="index" :class="{ active: currentTab === index }">
-                    <a href="#" @click.prevent="currentTab = index">{{ tab }}</a>
-                </div>
+                <a href="javascript:" class="mr-[30px] text-[30px] text-gray-500 font-bold hover:text-gray-900" v-for="(tab, index) in tabList" :key="index" :class="{ 'text-gray-900': currentTab === index }">
+                    <span href="#" @click.prevent="currentTab = index">{{ tab }}</span>
+                </a>
             </div>
 
             <!--  -->

@@ -53,6 +53,11 @@ const routes = [
     path: '/tabList',
     name: 'tabList',
     component: () => import('../views/tabList.vue')
+  },
+  {
+    path: '/IndexPage',
+    name: 'IndexPage',
+    component: () => import('../views/IndexPage.vue')
   }
 
 ]

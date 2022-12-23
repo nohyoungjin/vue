@@ -42,6 +42,7 @@
                         <router-link to="/NestedComponent" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">페이징</router-link>
                         <router-link to="/infiniteList" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">무한 스크롤</router-link>
                         <router-link to="/IndexPage" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">HTTP get</router-link>
+                        <router-link to="/DataDb" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">MySQL</router-link>
                     </div>
                 </div>
             </div>

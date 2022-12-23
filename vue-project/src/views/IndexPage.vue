@@ -8,7 +8,7 @@
           <div class="block w-[200px] margin-auto mx-[auto]">
             <img :src="movie.poster" class="block w-[100%] h-[100%]">
           </div>
-          <div class="mt-[10px]">
+          <div class="mt-[10px] mb-[10px]">
             <strong>{{ movie.name }}</strong><br>
             <span class="rate">예매율 <span class="num">{{ movie.rate }}</span></span><br>
           </div>

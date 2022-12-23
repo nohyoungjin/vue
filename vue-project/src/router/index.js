@@ -58,6 +58,11 @@ const routes = [
     path: '/IndexPage',
     name: 'IndexPage',
     component: () => import('../views/IndexPage.vue')
+  },
+  {
+    path: '/DataDb',
+    name: 'DataDb',
+    component: () => import('../views/DataDb.vue')
   }
 
 ]

@@ -63,6 +63,16 @@ const routes = [
     path: '/DataDb',
     name: 'DataDb',
     component: () => import('../views/DataDb.vue')
+  },
+  {
+    path: '/bodLogin',
+    name: 'bodLogin',
+    component: () => import('../views/bodLogin.vue')
+  },
+  {
+    path: '/signUp',
+    name: 'signUp',
+    component: () => import('../views/signUp.vue')
   }
 
 ]

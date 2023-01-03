@@ -1,5 +1,6 @@
 <template>
     <div class="hello">
+      <br />
       <div v-for="(user, index) in users" :key="index" class="user-wrap">
         <h2>No. {{ index + 1 }}</h2>
         <dl>
@@ -8,11 +9,13 @@
           <dt>이름</dt>
           <dd>{{ user.name }}</dd>
         </dl>
+        <br />
       </div>
     </div>
   </template>
   
-  <script>
+<script>
+
 import axios from 'axios'
 
 
@@ -24,8 +27,9 @@ import axios from 'axios'
     },
     created() {
         axios.get("/api/user").then((response) => {
-        this.users = response.data;
-      });
+        this.users = response.data
+      })
     }
-  };
-  </script>
+  }
+
+</script>

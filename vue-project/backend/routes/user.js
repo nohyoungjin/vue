@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
-const bcrypt = require('bcryptjs');
+var express = require('express')
+var router = express.Router()
+const bcrypt = require('bcryptjs')
 
-//추가한 부분
-var mysql = require('mysql');
+// 추가한 부분
+var mysql = require('mysql')
+
 // Connection 객체 생성 
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -11,22 +12,24 @@ var connection = mysql.createConnection({
   user: 'root',   
   password: '0000',
   database: 'pwa_crud'  
-});  
+})
+
 // Connect
 connection.connect(function (err) {   
   if (err) {     
-    console.error('mysql connection error');     
-    console.error(err);     
-    throw err;   
+    console.error('mysql connection error')
+    console.error(err)
+    throw err
   } 
-});
+})
 
 router.get('/', function (req, res) {
   connection.query('SELECT * FROM users', function (err, rows) {
-    if (err) throw err;
-    res.send(rows);
-  });
-});
+    if (err) throw err
+    res.send(rows)
+  })
+})
+
 router.post('/signUp', function (req, res) {
   const user = {
     'userid': req.body.user.userid,
@@ -52,8 +55,8 @@ router.post('/signUp', function (req, res) {
       })
     }
   });
-  
 });
+
 router.post('/login', function (req, res) {
   const user = {
     'userid': req.body.user.userid,
@@ -63,7 +66,7 @@ router.post('/login', function (req, res) {
     if (err) {
       res.json({ // 매칭되는 아이디 없을 경우
         success: false,
-        message: 'Login failed please check your id or password!'
+        message: '11'
       })
     }
     if (row[0] !== undefined && row[0].userid === user.userid) {
@@ -76,11 +79,12 @@ router.post('/login', function (req, res) {
         }
         else {
           res.json({ // 매칭되는 아이디는 있으나, 비밀번호가 틀린 경우            success: false,
-            message: 'Login failed please check your id or password!'
+            message: '222'
           })
         }
       })
     }
   })
 });
+
 module.exports = router;

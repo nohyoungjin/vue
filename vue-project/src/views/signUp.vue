@@ -1,5 +1,6 @@
 <template>
     <div class="app">
+      <br />
       <div class="input_row">
         <label for="id">아이디</label>
         <input type="text" id="id" v-model="user.userid" />
@@ -16,36 +17,36 @@
     </div>
   </template>
 
-  <script>
+<script>
 
 import axios from 'axios'
 
-  export default {
-   methods: {
-      signUp: function () {
-        axios.post("/api/user/signUp", {
-            user: this.user,
-          })
-          .then((res) => {
-            if (res.data.success == true) {
-              alert(res.data.message);
-              this.$router.push("/bodLogin");
-            }
-            if (res.data.success == false) {
-              alert(res.data.message);
-            }
-          })
-      }
-    },
-    data() {
-      return {
-        user: {
-          userid: "",
-          name: "",
-          password: "",
-        },
-      }
+export default {
+  methods: {
+    signUp: function() {
+      axios.post('/api/user/signUp', {
+          user: this.user
+      })
+      .then((res) => {
+        if (res.data.success == true) {
+          alert(res.data.message)
+          this.$router.push("/bodLogin")
+        }
+        if (res.data.success == false) {
+          alert(res.data.message)
+        }
+      })
+    }
+  },
+  data() {
+    return {
+      user: {
+        userid: "",
+        name: "",
+        password: ""
+      },
     }
   }
+}
 
-  </script>
+</script>

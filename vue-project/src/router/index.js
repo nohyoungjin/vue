@@ -4,6 +4,8 @@ import {
 } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
+import DataBinding from '../views/DataBinding.vue'
 
 const routes = [
   {
@@ -17,12 +19,12 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: AboutView
   },
   {
     path: '/DataBinding',
     name: 'DataBinding',
-    component: () => import('../views/DataBinding.vue')
+    component: DataBinding
   },
   {
     path: '/NestedComponent',
@@ -73,6 +75,11 @@ const routes = [
     path: '/signUp',
     name: 'signUp',
     component: () => import('../views/signUp.vue')
+  },
+  {
+    path: '/snowFlake',
+    name: 'snowFlake',
+    component: () => import('../views/snowFlake.vue')
   }
 
 ]

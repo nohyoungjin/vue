@@ -84,7 +84,7 @@ export default {
       return object({
         id: string().required('아이디를 입력해주세요.'),
         name: string().required('이름을 입력해주세요.'),
-        password: string().required('비밀번호를 입력해주세요.').matches(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[#?!@$%^&*-])(?=.{8,})/,'영문자, 숫자, 특수문자를 조합하여 최소 8자리를 입력해주세요.')
+        // password: string().required('비밀번호를 입력해주세요.').matches(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[#?!@$%^&*-])(?=.{8,})/,'영문자, 숫자, 특수문자를 조합하여 최소 8자리를 입력해주세요.')
       });
     },
   },

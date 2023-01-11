@@ -78,6 +78,8 @@ export default {
         (res) => {
           // 로그인 성공
           alert(res.data.message)
+          // 쿠키 생성
+          this.$cookies.set("key", "aaa", "1")
       })
     }
   }, 
@@ -85,7 +87,7 @@ export default {
     schema() {
       return object({
         id: string().required('아이디를 입력해주세요.'),
-        password: string().required('비밀번호를 입력해주세요.').matches(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[#?!@$%^&*-])(?=.{8,})/,'영문자, 숫자, 특수문자를 조합하여 최소 8자리를 입력해주세요.')
+        // password: string().required('비밀번호를 입력해주세요.').matches(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[#?!@$%^&*-])(?=.{8,})/,'영문자, 숫자, 특수문자를 조합하여 최소 8자리를 입력해주세요.')
       });
     },
   },

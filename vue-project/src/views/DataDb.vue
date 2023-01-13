@@ -1,18 +1,4 @@
 <template>
-    
-  <!-- <div class="hello">
-    <br />
-    <div v-for="(user, index) in users" :key="index" class="user-wrap">
-      <h2>No. {{ index + 1 }}</h2>
-      <dl>
-        <dt>아이디</dt>
-        <dd>{{ user.userid }}</dd>
-        <dt>이름</dt>
-        <dd>{{ user.name }}</dd>
-      </dl>
-      <br />
-    </div>
-  </div> -->
 
 <div class="mt-24 -mb-3">
   <div class="not-prose relative bg-slate-50 rounded-xl overflow-hidden dark:bg-slate-800/25">
@@ -21,12 +7,14 @@
   <div class="shadow-sm overflow-hidden my-8">
     <table class="border-collapse table-fixed w-full text-sm">
       <colgroup>
-						<col style="width:12%;">
+            <col style="width:6%;">
 						<col style="width:10%;">
-						<col style="width:78%;">
+						<col style="width:10%;">
+						<col style="width:74%;">
 					</colgroup>      
       <thead>
         <tr>
+          <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200">No.</th>
           <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200">아이디</th>
           <th class="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200">이름</th>
           <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200">비밀번호</th>
@@ -34,6 +22,7 @@
       </thead>
       <tbody class="bg-white dark:bg-slate-800">
         <tr v-for="(user, index) in users" :key="index" class="user-wrap">
+          <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{{ index + 1 }}</td>
           <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{{ user.userid }}</td>
           <td class="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">{{ user.name }}</td>
           <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 text-left">{{ user.password }}</td>
@@ -50,7 +39,7 @@
 import axios from 'axios'
 
 export default {
-  data() {
+  data: function() {
     return {
       users: []
     }

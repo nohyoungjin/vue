@@ -4,7 +4,7 @@
 
             <ul class="bod-list">
                 <li v-for="(item, $index) in list" :key="$index">
-                    <router-link :to="{ path:'/bodView', query: { id: item.numx } }" class="bod-container">
+                    <router-link :to="{ path: '/bodView', query: { id: item.numx } }" class="bod-container">
                         <div class="box-cont">
                             <div>{{ item.cate }}</div>
                             <h4>{{ item.coxt }}</h4>
@@ -44,16 +44,16 @@ import InfiniteLoading from 'vue-infinite-loading'
 const api = '//nohyoungjin.github.io/apitest/test.json'
 
 export default {
-    data() {
+    components: {
+        InfiniteLoading
+    },    
+    data: function() {
         return {
             limit: 5,
             list: [],
             listItems: [],
             busy: false
         }
-    },
-    components: {
-        InfiniteLoading
     },
     methods: {
         // 데이터 겟
@@ -86,7 +86,9 @@ export default {
                 }
 
                 this.list = this.list.concat(temp)
-                    $state.loaded()
+                    if ($state) {
+                        $state.loaded()
+                    }
                 }, 1000)
             }
         },

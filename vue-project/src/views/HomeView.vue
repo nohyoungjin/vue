@@ -47,7 +47,7 @@ import {
 
 export default {
 
-  setup() {
+  setup: function() {
     let state = reactive({
       num1: 0,
       num2: 0,
@@ -55,7 +55,6 @@ export default {
     })
 
     return { state }
-
   }
 
 }

@@ -19,19 +19,21 @@
 </template>
   
 <script>
+
 import axios from 'axios'
 
 export default {
-  created () {         
-    axios.get('/api/movies')
-        .then((response) => {
-          this.movies = response.data
-        })
-  },
-  data () {
+  data: function() {
     return {
       movies: []
     }
+  },
+  created() {         
+    axios.get('/api/movies')
+      .then((response) => {
+        this.movies = response.data
+    })
   }
 }
+
 </script>

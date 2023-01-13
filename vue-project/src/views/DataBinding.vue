@@ -63,9 +63,9 @@ import Paginate from 'vuejs-paginate-next'
 
 export default {
     components: {
-      paginate: Paginate
+      Paginate
     },
-    data() {
+    data: function() {
         return {
             currentTab: 0, // index 번호를 저장하는 변수
             tabList: [
@@ -81,7 +81,7 @@ export default {
             perPage: 1
         }
     },
-    created() {
+    created: function() {
         this.getList()
     },
     computed: {
@@ -96,7 +96,7 @@ export default {
     },
     methods: {
         //
-        activate:function(el) {
+        activate: function(el) {
             this.active_el = el
         },
 

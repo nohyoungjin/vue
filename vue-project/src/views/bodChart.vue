@@ -30,7 +30,7 @@
 <script>
 
 export default {
-  data() {
+  data: function() {
     return {
         defVa: 40.5,
         addVa: 13.5

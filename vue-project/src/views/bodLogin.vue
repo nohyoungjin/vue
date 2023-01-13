@@ -3,12 +3,6 @@
     <div class="w-full max-w-md space-y-8">
       <div>
         <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
-        <!-- <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
-        <p class="mt-2 text-center text-sm text-gray-600">
-          Or
-          {{ ' ' }}
-          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">start your 14-day free trial</a>
-        </p> -->
       </div>
 
       <Form @submit="login" :validation-schema="schema">
@@ -45,7 +39,9 @@
           </button>
         </div>
 
-        <div class="mt-3 text-[14px]"><a href="/signUp">가입하기</a></div>
+        <div class="mt-3 text-[14px]">
+          <router-link to="/signUp">가입하기</router-link>
+        </div>
       </Form>
 
     </div>
@@ -61,11 +57,15 @@ import { Form, Field } from 'vee-validate';
 import { object, string } from 'yup';
 
 export default {
+  components: {
+    Form,
+    Field
+  },
   data: function() {
     return {
       user: {
-        userid: "",
-        password: "",
+        userid: '',
+        password: ''
       }
     }
   },
@@ -79,22 +79,21 @@ export default {
           // 로그인 성공
           alert(res.data.message)
           // 쿠키 생성
-          this.$cookies.set("key", "aaa", "1")
+          // this.$cookies.set('key', this.user.userid, '1')
+
+          //
+          this.$store.commit('SET_TEST', this.user.userid)                   
       })
     }
   }, 
   computed: {
-    schema() {
+    schema: function() {
       return object({
         id: string().required('아이디를 입력해주세요.'),
-        // password: string().required('비밀번호를 입력해주세요.').matches(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[#?!@$%^&*-])(?=.{8,})/,'영문자, 숫자, 특수문자를 조합하여 최소 8자리를 입력해주세요.')
+        password: string().required('비밀번호를 입력해주세요.').matches(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[#?!@$%^&*-])(?=.{8,})/,'영문자, 숫자, 특수문자를 조합하여 최소 8자리를 입력해주세요.')
       });
-    },
-  },
-  components: {
-    Form,
-    Field
-  },
+    }
+  }
 }
 
 </script>

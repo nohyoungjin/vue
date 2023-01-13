@@ -3,7 +3,7 @@
     <div class="p-container">
         <div class="p-container_inner">
 
-            <div style="display:none;">
+            <div class="hidden">
                 <PageTitle title="데이터 전달" />
             </div>
 
@@ -69,13 +69,13 @@ import Paginate from 'vuejs-paginate-next'
 export default {
     components: {
         PageTitle,
-        paginate: Paginate
+        Paginate
     },
     data: function() {
         return {
             items: [],
             currentPage: 1,
-            perPage: 3,
+            perPage: 3
         }
     },
     created: function() {
@@ -100,7 +100,7 @@ export default {
         paginateClickCallback: function (pageNum) {
             this.currentPage = Number(pageNum)
         }
-    },
+    }
 }
 
 </script>

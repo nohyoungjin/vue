@@ -16,8 +16,12 @@ const store = createStore({
             state.test = value
         }
     },
-    actions: {},
-    getters: {}
+    actions: {
+
+    },
+    getters: {
+        
+    }
 })
 
 export default store

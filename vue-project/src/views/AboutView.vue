@@ -40,6 +40,7 @@
 <script>
 
 export default {
+    name: "AboutView",
     data: function() {
         return {
             siteUrl: 'http://skhappiness.org/innovator/newvori.do'

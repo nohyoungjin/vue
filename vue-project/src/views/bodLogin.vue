@@ -27,7 +27,10 @@
           </div>
         </Field>
 
-        <div class="loginErr" v-if="loginErr">로그인에 실패하였습니다.</div>
+        <!-- <div class="loginErr" v-if="loginErr">
+          로그인에 실패하였습니다.
+        </div> -->
+
         <div class="mt-3">
           <button type="submit" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
             <span class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -42,6 +45,7 @@
         <div class="mt-3 text-[14px]">
           <router-link to="/signUp">가입하기</router-link>
         </div>
+        <p class="mt-10 text-[12px]">{{  }}</p>
       </Form>
 
     </div>
@@ -91,7 +95,7 @@ export default {
       return object({
         id: string().required('아이디를 입력해주세요.'),
         password: string().required('비밀번호를 입력해주세요.').matches(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[#?!@$%^&*-])(?=.{8,})/,'영문자, 숫자, 특수문자를 조합하여 최소 8자리를 입력해주세요.')
-      });
+      })
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
     
     <div class="footer">
-        푸터 {{ this.$store.state.test }}
+        푸터
     </div>
     
 </template>
@@ -9,7 +9,7 @@
 <script>
 
 export default {
-    name: 'PageFoot'  
+    name: 'PageFoot',
 }
 
 </script>

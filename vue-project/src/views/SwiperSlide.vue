@@ -4,14 +4,13 @@
             :slidesPerView="1"
             :spaceBetween="30"
             :autoplay="{
-                delay: 10000,
+                delay: 1000,
                 disableOnInteraction: false,
             }"      
             :loop="true"
             :loopedSlides="1"
-            :navigation="true"
+            navigation
             :pagination="pagination"
-            :effect="'card'"
             :fadeEffect="{
                 crossFade: true,
             }"
@@ -20,8 +19,7 @@
             @slideChange="onSlideChange" 
             class="mySwiper"
         >
-            <swiper-slide :key="index"
-            class="main_visual_item">
+            <swiper-slide class="main_visual_item">
                 <div class="main_visual_content_inner">
                     <div class="inner">
                         <p class="tit1"><span>나에게 행복이란?</span></p>
@@ -38,13 +36,34 @@
             </swiper-slide>
         </swiper>
     </div>
+
+    <div class="control" v-bind:class="{'active': isActive}">
+        <button @click="handleStart">시작</button> &nbsp;
+        <button @click="handleStop">정지</button>
+        <p style="margin:20px 0 0;">
+            현재 - {{ counter }}
+        </p>
+    </div>
   </template>
   <script>
+
     // import Swiper core and required modules
-    import { Autoplay, Navigation, Pagination, A11y, EffectFade } from 'swiper'
+
+    import { 
+        Autoplay, 
+        Navigation, 
+        Pagination, 
+        A11y, 
+        EffectFade 
+    } from 'swiper'
   
     // Import Swiper Vue.js components
-    import { Swiper, SwiperSlide } from 'swiper/vue'
+
+    import { 
+        Swiper, 
+        SwiperSlide,
+        useSwiper
+    } from 'swiper/vue'
   
     // Import Swiper styles
     import 'swiper/css'
@@ -60,7 +79,7 @@
         SwiperSlide
       },
       setup() {
-        const onSwiper = (swiper) => {
+        /* const onSwiper = (swiper) => {
             console.log(swiper)
             gsap.fromTo('.main_visual_content_inner p.tit1 span', { 
                 y: 80, 
@@ -70,11 +89,10 @@
                 autoAlpha: 1, 
                 duration: 0.35 
             })
-        }
+        } */
 
         const onSlideChange = () => {
             console.log('slide change')
-
             gsap.fromTo('.main_visual_content_inner p.tit1 span', { 
                 y: 80, 
                 autoAlpha: 0 
@@ -85,9 +103,13 @@
             })
         }
 
+        const swiper = useSwiper()
+
         return {
-            onSwiper,
+            // onSwiper,
             onSlideChange,
+
+            swiper,
 
             pagination: {
                 clickable: true,
@@ -95,11 +117,39 @@
                     return '<span class="' + className + '">' + (index + 1) + "</span>";
                 },
             },
-            modules: [Autoplay, Navigation, Pagination, A11y, EffectFade],
+            modules: [
+                Autoplay, 
+                Navigation, 
+                Pagination, 
+                A11y, 
+                EffectFade
+            ],
         }
 
       },
+      data() {
+        return {
+            counter: '시작'
+        }
+      },
+      methods: {
+        onSwiper(swiper) {
+            this.swiper = swiper;
+        },
+
+        handleStart() {
+            this.swiper.autoplay.start()
+            this.counter = '시작'
+        },
+
+        handleStop() {
+            this.swiper.autoplay.stop()
+            this.counter = '정지'
+        },
+    },
+
     }
+
   </script>
 
 <style>

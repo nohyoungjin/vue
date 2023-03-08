@@ -40,9 +40,9 @@
     <div class="control" v-bind:class="{'active': isActive}">
         <button @click="handleStart">시작</button> &nbsp;
         <button @click="handleStop">정지</button>
-        <p style="margin:20px 0 0;">
-            현재 - {{ counter }}
-        </p>
+        <div>
+            현재 - {{ status }}
+        </div>
     </div>
   </template>
   <script>
@@ -129,7 +129,7 @@
       },
       data() {
         return {
-            counter: '시작'
+            status: '시작'
         }
       },
       methods: {
@@ -139,14 +139,14 @@
 
         handleStart() {
             this.swiper.autoplay.start()
-            this.counter = '시작'
+            this.status = '시작'
         },
 
         handleStop() {
             this.swiper.autoplay.stop()
-            this.counter = '정지'
+            this.status = '정지'
         },
-    },
+     },
 
     }
 
